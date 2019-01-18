@@ -59,10 +59,10 @@ write.gemma.geno <- function (file, geno, map) {
 read.gemma.assoc <- function (file) {
   gwscan <- read.table(file,sep = "\t",header = TRUE,check.names = FALSE,
                   quote = "",stringsAsFactors = FALSE)
-  rownames(gwscan) <- gwscan$rs  
-  gwscan           <- gwscan[c("chr","ps","p_lrt")]
-  gwscan           <- transform(gwscan,p_lrt = -log10(p_lrt))
-  colnames(gwscan) <- c("CHR","BP","P")
+  #rownames(gwscan) <- gwscan$rs 
+  gwscan           <- gwscan[c("rs", "chr","ps","p_lrt")]
+  #gwscan           <- transform(gwscan,p_lrt = -log10(p_lrt))
+  colnames(gwscan) <- c("SNP","CHR","BP","P")
   
   return(gwscan)
 }
