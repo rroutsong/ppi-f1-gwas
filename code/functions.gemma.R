@@ -62,7 +62,7 @@ read.gemma.assoc <- function (file) {
   rownames(gwscan) <- gwscan$rs  
   gwscan           <- gwscan[c("chr","ps","p_lrt")]
   gwscan           <- transform(gwscan,p_lrt = -log10(p_lrt))
-  colnames(gwscan) <- c("chr","pos","log10p")
+  colnames(gwscan) <- c("CHR","BP","P")
   
   return(gwscan)
 }
